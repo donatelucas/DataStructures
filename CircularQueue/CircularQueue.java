@@ -41,8 +41,7 @@ public class CircularQueue {
     }
 
     // If the queue is full or not
-    public boolean queueStatus() {
+    public void queueStatus() {
 
     }
-
 }
