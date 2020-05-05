@@ -15,8 +15,8 @@ import java.util.ArrayList;
     tail = (tail+1) % maxSize
 */
 public class CircularQueue {
-    private int SIZE = 5;
-    private String queue[] = new String[SIZE];
+    private int SIZE;
+    private ArrayList<String> queue = new ArrayList<>();
     private final int TAIL = SIZE;
     private final int HEAD = 0;
     private boolean status;
@@ -26,22 +26,32 @@ public class CircularQueue {
         this.SIZE = size;
     }
 
+    public int getSize(){
+        return SIZE;
+    }
+
     public String pop() {
-        String temp = queue[HEAD];
+        String temp = queue.get(HEAD);
         // head has to be cleaned
         eraseHead();
         return temp;
     }
 
     private void eraseHead() {
-        queue[0] = null;
+        queue.set(HEAD, null);
     }
 
     public void insert(String s){
-        queue[TAIL] = s;
+        if (!status){
+            queue.add(s);
+        }
+        else {
+            System.out.println("The queue is full");
+        }
+
     }
 
-    public String[] getQueue(){
+    public ArrayList getQueue(){
         return queue;
     }
 
