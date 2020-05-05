@@ -15,19 +15,13 @@ import java.util.ArrayList;
     tail = (tail+1) % maxSize
 */
 public class CircularQueue {
-    private int SIZE;
     private ArrayList<String> queue = new ArrayList<>();
-    private final int TAIL = SIZE;
+    private final int TAIL = queue.size();
     private final int HEAD = 0;
     private boolean status;
 
-    // Returns and deletes the HEAD, triggering the queue to move up
-    public void setSize(int size){
-        this.SIZE = size;
-    }
-
     public int getSize(){
-        return SIZE;
+        return queue.size();
     }
 
     public String pop() {
@@ -48,7 +42,6 @@ public class CircularQueue {
         else {
             System.out.println("The queue is full");
         }
-
     }
 
     public ArrayList getQueue(){
