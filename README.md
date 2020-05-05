@@ -1,5 +1,7 @@
 # Data Structures in Java
 
+- [CircularQueue](./CircularQueue)
+
 - In Production:
     - CircularQueue
     Tasks:
